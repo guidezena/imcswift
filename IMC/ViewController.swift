@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func calculate(sender: Any) {
         if let Weigth = Double(tfWeigth.text!),let Heigth = Double(tfHeigth.text!){
-            imc = Weigth / (Heigth * Heigth)
+            imc = (Weigth / (Heigth * Heigth))
             showResults()
         }
     }
@@ -52,12 +52,14 @@ class ViewController: UIViewController {
                     result = "Sobrepeso"
                     image = "sobre"
                 default:
-                    result = "obesidade"
+                    result = "Obesidade"
                     image = "obesidade"
         }
+            
             lbResult.text = result
             ivResult.image = UIImage(named: image)
-            viResult.isHidden = false
+
+            
     }
     
 }
